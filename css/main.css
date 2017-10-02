@@ -178,7 +178,13 @@ BACKGROUND COLOR
 TYPOGRAPHY
 --------------------------------------------------------------*/
 
-.type-edo {
+.type-open-sans,
+.type-open-sans * {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.type-edo,
+.type-edo * {
     font-family: 'Edo', 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -979,11 +985,13 @@ CAREERS
 }
 
 
-.careers-digital-genius h2 {
+.careers-digital-genius h2,
+.careers-internship h1 {
     font-size: 35px;
 }
 
-.careers-digital-genius h2 > span {
+.careers-digital-genius h2 > span,
+.careers-internship h1 > span {
     display: block;
     color: #000000;
     font-size: 170%;
@@ -1332,11 +1340,13 @@ MEDIA QUERIES
     }
 
 
-    .careers-digital-genius h2 {
+    .careers-digital-genius h2,
+    .careers-internship h1 {
         font-size: 20px;
     }
 
-    .careers-digital-genius h2 > span {
+    .careers-digital-genius h2 > span,
+    .careers-internship h1 > span {
         font-size: 145%;
     }
 
@@ -1430,7 +1440,8 @@ MEDIA QUERIES
     CAREERS
     --------------------------------------------------------------*/
 
-    .careers-digital-genius.careers-internship h2 > span {
+    .careers-digital-genius.careers-internship h2 > span,
+    .careers-internship h1 > span {
         font-size: 120%;
     }
 }
@@ -1442,6 +1453,15 @@ MEDIA QUERIES
     --------------------------------------------------------------*/
 
     .home-about-title {
+        font-size: 30px;
+    }
+
+
+    /*--------------------------------------------------------------
+    CAREERS
+    --------------------------------------------------------------*/
+
+    .internship-requirements .panel-title {
         font-size: 30px;
     }
 }
