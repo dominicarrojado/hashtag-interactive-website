@@ -286,6 +286,13 @@ HELPERS
     background-position: top center;
 }
 
+.image-optimized {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 .list-container {
     margin: 0;
     padding: 0;
@@ -333,6 +340,11 @@ BUTTONS
 .btn-hashtag.btn-hashtag-white {
     border-color: #ffffff;
     color: #ffffff;
+}
+
+.btn-hashtag.disabled {
+    opacity: .6;
+    pointer-events: none;
 }
 
 .btn-hashtag:hover {
@@ -397,10 +409,6 @@ HEADER
 
 .header-main > .logo > img {
     width: 157px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: crisp-edges;
     -webkit-transition: width .3s ease-in-out;
     -moz-transition: width .3s ease-in-out;
     -ms-transition: width .3s ease-in-out;
@@ -685,7 +693,47 @@ HOME
 .home-clients > .clients {
     position: relative;
     padding: 0 50px;
-    cursor: move;
+}
+
+.home-clients > .owl-carousel .owl-nav .owl-prev,
+.home-clients > .owl-carousel .owl-nav .owl-next {
+    position: absolute;
+    top: 25%;
+    display: inline-block;
+    color: #ffffff;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 40px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: .6;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+
+.home-clients > .owl-carousel .owl-nav .owl-prev:hover,
+.home-clients > .owl-carousel .owl-nav .owl-next:hover {
+    opacity: 1;
+}
+
+.home-clients > .owl-carousel .owl-nav .owl-prev {
+    left: 13px;
+}
+
+
+.home-clients > .owl-carousel .owl-nav .owl-prev::before {
+    content: '\f104';
+}
+
+.home-clients > .owl-carousel .owl-nav .owl-next {
+    right: 13px;
+}
+
+.home-clients > .owl-carousel .owl-nav .owl-next::before {
+    content: '\f105';
 }
 
 .home-clients > .clients .client-item {
@@ -942,6 +990,37 @@ BLOG
 
 .blog-main .controls > a:hover {
     opacity: 1;
+}
+
+
+/*--------------------------------------------------------------
+BLOG - SINGLE
+--------------------------------------------------------------*/
+
+.blog-single-author {
+    position: relative;
+    padding: 7px 0 7px 80px;
+    margin-bottom: 30px;
+}
+
+.blog-single-author > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.blog-single-container img,
+.blog-single-container iframe {
+    max-width: 100%;
+}
+
+.blog-single-container img {
+    height: auto;
+    margin: 10px 20px;
+    line-height: 1;
 }
 
 

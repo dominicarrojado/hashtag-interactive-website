@@ -1,4 +1,17 @@
 /*--------------------------------------------------------------
+ FUNCTIONS
+ --------------------------------------------------------------*/
+
+function scrollToElement(element) {
+    $('html, body').animate({
+        scrollTop: $(element).offset().top - 54
+    }, 800, function() {
+        window.location.hash = element;
+    });
+}
+
+
+/*--------------------------------------------------------------
 MOBILE SIDEBAR
 --------------------------------------------------------------*/
 
@@ -71,13 +84,7 @@ $(document).ready(function() {
     $('.scroll-to-href').on('click', function(event) {
         event.preventDefault();
 
-        var href = event.currentTarget.getAttribute('href');
-
-        $('html, body').animate({
-            scrollTop: $(href).offset().top - 54
-        }, 800, function() {
-            window.location.hash = href;
-        });
+        scrollToElement(event.currentTarget.getAttribute('href'));
     });
 
     /*--------------------------------------------------------------
@@ -125,7 +132,19 @@ $(document).ready(function() {
     CAREERS
     --------------------------------------------------------------*/
 
-    $('.apply-to-job-btn').on('click', function(event) {
+    $('#careerContactFormFile').on('change', function(event) {
+        if (event.target.files.length > 0) {
+            $('#labelAttached').removeClass('d-none');
+        }
+    });
 
+    $('.apply-to-job-btn').on('click', function(event) {
+        $('.modal-job').modal('hide');
+
+        document.getElementById('position').value = event.currentTarget.dataset.position;
+
+        setTimeout(function() {
+            scrollToElement('#apply');
+        }, 600);
     });
 });
