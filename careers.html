@@ -19,30 +19,6 @@
 </head>
 <body>
 
-<div id="preLoader" class="pre-loader">
-    <div class="w-100 h-100 d-flex">
-        <div class="m-auto">
-            <div class="loading-hashtag-logo">
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <header id="header" class="header-main clearfix">
     <a href="index.html" class="logo">
         <img class="img-fluid" src="images/header-logo.png" alt="Hashtag Interactive logo">
@@ -358,16 +334,25 @@
             Join us
         </h2>
         <div class="contact-form-hashtag mx-auto text-right">
-            <input id="name" class="form-control" type="text" placeholder="Full name"><br />
-            <input class="form-control" type="email" placeholder="Email address"><br />
-            <input class="form-control" type="tel" placeholder="Contact number"><br />
-            <input id="position" class="form-control" type="text" placeholder="The position I'm applying for">
-            <input id="careerContactFormFile" class="d-none" type="file" accept="application/pdf">
-            <div class="mt-5">
-                <label id="labelAttached" class="d-none btn mb-2">File attached.</label>
-                <label for="careerContactFormFile" class="btn btn-hashtag btn-hashtag-white mb-2">Attach PDF</label>&nbsp;
-                <input class="btn btn-hashtag btn-hashtag-white px-5 mb-2" type="submit" value="Send">
+            <div class="wpcf7">
+                <input id="name" class="form-control" type="text" placeholder="Full name"><br />
+                <input class="form-control" type="email" placeholder="Email address"><br />
+                <input class="form-control" type="tel" placeholder="Contact number"><br />
+                <input id="position" class="form-control" type="text" placeholder="The position I'm applying for">
+                <input id="careerContactFormFile" class="d-none" type="file" accept="application/pdf"><br />
+                <div class="d-flex justify-content-end flex-wrap mt-4">
+                    <label id="labelAttached" class="d-none btn my-auto">
+                        <i class="fa fa-file-text-o"></i>&nbsp; File attached.
+                    </label>
+                    <label for="careerContactFormFile" class="btn btn-hashtag btn-hashtag-white m-1">Attach PDF</label>&nbsp;
+                    <input class="btn btn-hashtag btn-hashtag-white m-1 px-5" type="submit" value="Send">
+                    <!--<span class="ajax-loader is-active"></span>-->
+                </div>
+                <!--<div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" style="display: block;" role="alert">
+                    One or more fields have an error. Please check and try again.
+                </div>-->
             </div>
+
         </div>
     </div>
 </section>
@@ -383,7 +368,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     A Business Development Manager helps push the Hashtag Interactive business forward. This person would collaborate directly with management to identify new business opportunities and strategies then work towards developing those leads. He or she would work closely with cross-functional teams in both our offices in Singapore and Manila to develop pitch and proposal material, as well as, take the lead on strategising the right tactics for key clients and accounts.
                 </p>
                 <div class="text-center">
@@ -406,7 +391,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     Our Accounts Team is the glue of our organisation. Account Managers pull different specialists and teams together to create some of the best products and campaigns our creative brains can muster. They are the client-facing strategists that contribute to our business growth through creating and nurturing relationships with both internal resources and external partners. They have a special passion for digital marketing and brand building and have an innate entrepreneurial spirit.
                 </p>
                 <div class="text-center">
@@ -429,7 +414,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     The Web Developer powers the efforts of the Hashtag Interactive Technology Team as they leverage their programming skills to translate our technology dreams into reality. The Developer will contribute to our efforts to create new and exciting web technologies and enhance existing tools with added functionality. The Developer role requires a dedication to constant learning in order to stay up-to-date with the latest developments in the programming world. The Developer also needs to be able to communicate well and solve problems as they come while not losing sight of scalability.
                 </p>
                 <div class="text-center">
@@ -452,7 +437,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     The Digital Designer translates marketing campaign strategies into the visual language of graphic design. A clear understanding of typography, layout, animation and art direction will be needed to help the team produce the best work possible. The designer is a strong communicator, who can work with other team members to better understand what is needed, but can also explain the designer's creations and the rationale behind them. The Digital Designer speaks the language of imagery and breathes colors and shades.
                 </p>
                 <div class="text-center">
@@ -475,7 +460,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     The SEO Specialist is responsible for managing Search Engine Optimization (SEO) activities such as defining content strategy, engaging in link building, and creating keyword strategies to increase the internet search rankings of client pages. This covers both on-page and off-page SEO for the company and its clients.
                 </p>
                 <div class="text-center">
@@ -498,8 +483,8 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
-                    The Copywriter operates at a level well above your typical writer. They're master wordsmiths that use words to craft a wide variety of content including social media posts, client-specific presentations, or blog posts. They're impeccable communicators who understand their audience and use words to engage customers and create memorable experiences. They can see things from the customer's perspective and find a common ground through which to help clients reach out to and inspire brand advocates. We are also open to more junior copywriters with a flair for words and a willingness to learn.
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
+                    The SEM Specialist is responsible for Search Engine Marketing (SEM) campaigns on relevant search and mobile ad platforms including developing ad budget spending strategies and monitoring click-through and impression trends. The SEM Specialist should be able leverage analytics data to optimise advertising budgets and keyword strategies to maximise ROI and drive goal attainment based in client KPIs.
                 </p>
                 <div class="text-center">
                     <button data-position="SEM Specialist" class="apply-to-job-btn btn btn-hashtag">
@@ -521,7 +506,7 @@
                 </button>
             </div>
             <div class="modal-body p-4">
-                <p class="mb-5 font-size-20">
+                <p class="panel-description mb-5 font-size-20 font-weight-300">
                     The Copywriter operates at a level well above your typical writer. They're master wordsmiths that use words to craft a wide variety of content including social media posts, client-specific presentations, or blog posts. They're impeccable communicators who understand their audience and use words to engage customers and create memorable experiences. They can see things from the customer's perspective and find a common ground through which to help clients reach out to and inspire brand advocates. We are also open to more junior copywriters with a flair for words and a willingness to learn.
                 </p>
                 <div class="text-center">

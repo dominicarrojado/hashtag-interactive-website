@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------
- FUNCTIONS
- --------------------------------------------------------------*/
+FUNCTIONS
+--------------------------------------------------------------*/
 
 function scrollToElement(element) {
     $('html, body').animate({
@@ -72,18 +72,27 @@ window.onscroll = function windowOnScroll() {
 
 
 /*--------------------------------------------------------------
+PRE-LOADER
+--------------------------------------------------------------*/
+
+window.onload = function windowOnLoad() {
+    var preLoader = document.getElementById('preLoader');
+
+    if (preLoader) {
+        preLoader.classList.add('hide');
+
+        setTimeout(function() {
+            preLoader.style.display = 'none';
+        }, 300);
+    }
+};
+
+
+/*--------------------------------------------------------------
 JQUERY
 --------------------------------------------------------------*/
 
 $(document).ready(function() {
-
-    /*--------------------------------------------------------------
-    PRE-LOADER
-    --------------------------------------------------------------*/
-
-    $(window).on('load', function() {
-        $('#preLoader').fadeOut(300);
-    });
 
     /*--------------------------------------------------------------
     SCROLL TO ELEMENT
@@ -94,6 +103,7 @@ $(document).ready(function() {
 
         scrollToElement(event.currentTarget.getAttribute('href'));
     });
+
 
     /*--------------------------------------------------------------
     HOME
@@ -128,13 +138,15 @@ $(document).ready(function() {
         }
     });
 
+
     /*--------------------------------------------------------------
-     OWL CAROUSEL QUICK FIX
-     --------------------------------------------------------------*/
+    OWL CAROUSEL QUICK FIX
+    --------------------------------------------------------------*/
 
     $(window).on('focus', function() {
         $('#homeClients').trigger('stop.owl.autoplay').trigger('play.owl.autoplay');
     });
+
 
     /*--------------------------------------------------------------
     CAREERS

@@ -19,30 +19,6 @@
 </head>
 <body>
 
-<div id="preLoader" class="pre-loader">
-    <div class="w-100 h-100 d-flex">
-        <div class="m-auto">
-            <div class="loading-hashtag-logo">
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <header id="header" class="header-main clearfix">
     <a href="index.html" class="logo">
         <img class="img-fluid" src="images/header-logo.png" alt="Hashtag Interactive logo">
@@ -198,11 +174,19 @@
             Drop us a line
         </h2>
         <div class="contact-form-hashtag mx-auto text-right">
-            <input class="form-control" type="text" placeholder="Full name"><br />
-            <input class="form-control" type="email" placeholder="Email address"><br />
-            <input class="form-control" type="tel" placeholder="Contact number"><br />
-            <textarea class="form-control" placeholder="Message"></textarea><br />
-            <input class="btn btn-hashtag btn-hashtag-white px-5 mt-4" type="submit" value="Send">
+            <div class="wpcf7">
+                <input class="form-control" type="text" placeholder="Full name"><br />
+                <input class="form-control" type="email" placeholder="Email address"><br />
+                <input class="form-control" type="tel" placeholder="Contact number"><br />
+                <textarea class="form-control" placeholder="Message"></textarea><br />
+                <div class="d-flex justify-content-end flex-wrap mt-4">
+                    <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit btn btn-hashtag btn-hashtag-white m-1 px-5">
+                    <!--<span class="ajax-loader is-active"></span>-->
+                </div>
+                <!--<div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" style="display: block;" role="alert">
+                    One or more fields have an error. Please check and try again.
+                </div>-->
+            </div>
         </div>
     </div>
 </section>

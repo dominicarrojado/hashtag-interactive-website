@@ -244,6 +244,12 @@ TYPOGRAPHY
 HELPERS
 --------------------------------------------------------------*/
 
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
 .relative {
     position: relative;
 }
@@ -319,6 +325,7 @@ BUTTONS
 --------------------------------------------------------------*/
 
 .btn-hashtag {
+    outline: none;
     border: 2px solid #1a1a1a;
     border-radius: 4px;
     padding: 10px 25px;
@@ -330,9 +337,15 @@ BUTTONS
     cursor: pointer;
 }
 
-.btn-hashtag.btn-hashtag-white {
-    border-color: #ffffff;
+.btn-hashtag:hover {
     color: #ffffff;
+    text-decoration: none;
+    background-color: #1a1a1a;
+}
+
+.btn-hashtag.focus,
+.btn-hashtag:focus {
+    box-shadow: none;
 }
 
 .btn-hashtag.disabled {
@@ -340,10 +353,9 @@ BUTTONS
     pointer-events: none;
 }
 
-.btn-hashtag:hover {
+.btn-hashtag.btn-hashtag-white {
+    border-color: #ffffff;
     color: #ffffff;
-    text-decoration: none;
-    background-color: #1a1a1a;
 }
 
 .btn-hashtag.btn-hashtag-white:hover {
@@ -641,8 +653,16 @@ DEFAULT
     height: 100%;
     z-index: 9999;
     background-color: #1a1a1a;
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -ms-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
 }
 
+.pre-loader.hide {
+    opacity: 0;
+}
 
 /*--------------------------------------------------------------
 HOME
@@ -781,6 +801,7 @@ HOME
 
 .contact-form-hashtag textarea.form-control {
     height: 100px;
+    min-height: 100px;
 }
 
 .contact-form-hashtag .form-control::-webkit-input-placeholder {
@@ -807,6 +828,68 @@ HOME
 }
 .bg-black .contact-form-hashtag .form-control:-moz-placeholder {
     color: #444444;
+}
+
+.contact-form-hashtag span.wpcf7-not-valid-tip {
+    display: none;
+}
+
+.contact-form-hashtag div.wpcf7-response-output {
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 25px 0 0;
+    text-align: center;
+    padding: 15px 10px;
+    color: #ffffff;
+    font-size: 16px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bg-black .contact-form-hashtag div.wpcf7-response-output {
+    color: #212529;
+}
+
+.contact-form-hashtag div.wpcf7-response-output::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    opacity: .6;
+    z-index: -1;
+}
+
+.bg-black .contact-form-hashtag div.wpcf7-response-output::before {
+    background-color: #ffffff;
+}
+
+.contact-form-hashtag div.wpcf7 .ajax-loader {
+    display: none;
+    width: 17px;
+    height: 19px;
+    margin: 17px;
+    background-image: none;
+    color: #ffffff;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+
+.contact-form-hashtag div.wpcf7 .ajax-loader.is-active {
+    display: inline-block;
+}
+
+.contact-form-hashtag div.wpcf7 .ajax-loader::before {
+    content: '\f021';
 }
 
 .home-contact .copyright {
@@ -915,11 +998,6 @@ WHAT WE DO
     cursor: pointer;
 }
 
-.modal-services .modal-body,
-.modal-services .modal-body * {
-    font-family: 'Open Sans', Arial, sans-serif;
-}
-
 
 /*--------------------------------------------------------------
 BLOG
@@ -977,6 +1055,14 @@ BLOG
 }
 
 .blog-main .blog-list a > article > .info h3,
+.blog-main .blog-list a > article > .info > .excerpt,
+.blog-main .blog-lista >  article .info > .author {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.blog-main .blog-list a > article > .info h3,
 .blog-main .blog-list a > article > .info > .excerpt {
     max-height: 44px;
 }
@@ -985,10 +1071,22 @@ BLOG
     max-height: 42px;
 }
 
-.blog-main .controls > a {
-    font-size: 16px;
+.blog-main-controls {
+    max-width: 350px;
+    color: #212529;
+    font-size: 18px;
+    cursor: default;
+}
+
+.blog-main-controls > * {
+    width: 25px;
+    text-align: center;
+}
+
+.blog-main-controls > a {
+    color: #212529;
+    text-decoration: none;
     opacity: .5;
-    cursor: pointer;
     -webkit-transition: opacity .2s ease-in-out;
     -moz-transition: opacity .2s ease-in-out;
     -ms-transition: opacity .2s ease-in-out;
@@ -996,8 +1094,14 @@ BLOG
     transition: opacity .2s ease-in-out;
 }
 
-.blog-main .controls > a:hover {
+.blog-main-controls > a:hover {
     opacity: 1;
+}
+
+.blog-main-controls > .prev,
+.blog-main-controls > .next {
+    font-size: 24px;
+    line-height: 1;
 }
 
 
@@ -1007,14 +1111,16 @@ BLOG - SINGLE
 
 .blog-single-author {
     position: relative;
-    padding: 7px 0 7px 80px;
+    padding: 23px 25px 25px 100px;
     margin-bottom: 30px;
+    background-color: #eee;
+    display: inline-block;
 }
 
 .blog-single-author > img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 15px;
+    left: 15px;
     width: 64px;
     height: 64px;
     object-fit: cover;
@@ -1031,16 +1137,46 @@ BLOG - SINGLE
     line-height: 1;
 }
 
-.blog-single-content img.float-right,
-.blog-single-content iframe.float-right {
-    margin-left: 20px;
+.blog-single-content img.float-left,
+.blog-single-content img.alignleft,
+.blog-single-content img[align=left],
+.blog-single-content iframe.float-left {
+    margin-right: 25px;
     margin-bottom: 20px;
 }
 
-.blog-single-content img.float-left,
-.blog-single-content iframe.float-left {
-    margin-right: 20px;
+.blog-single-content img.float-right,
+.blog-single-content img.alignright,
+.blog-single-content img[align=right],
+.blog-single-content iframe.float-right {
+    margin-left: 25px;
     margin-bottom: 20px;
+}
+
+.blog-single-content img.alignleft {
+    float: left;
+}
+
+.blog-single-content img.alignright {
+    float: right;
+}
+
+
+.blog-single-controls > a {
+    color: #212529;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: .5;
+    cursor: pointer;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -ms-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+
+.blog-single-controls > a:hover {
+    opacity: 1;
 }
 
 
@@ -1242,10 +1378,6 @@ CAREERS
     cursor: pointer;
 }
 
-.modal-job .modal-body,
-.modal-job .modal-body * {
-    font-family: 'Open Sans', Arial, sans-serif;
-}
 
 /*--------------------------------------------------------------
 ANIMATIONS
@@ -1330,10 +1462,10 @@ ANIMATIONS
 }
 
 .loading-hashtag-logo > div:first-child {
-    -webkit-transform: translateX(10px);
-    -moz-transform: translateX(10px);
-    -ms-transform: translateX(10px);
-    -o-transform: translateX(10px);
+    -webkit-transform: translateX(4px);
+    -moz-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    -o-transform: translateX(4px);
     transform: translateX(4px);
 }
 
@@ -1343,10 +1475,10 @@ ANIMATIONS
 }
 
 .loading-hashtag-logo > div:last-child {
-    -webkit-transform: translateX(10px);
-    -moz-transform: translateX(10px);
-    -ms-transform: translateX(10px);
-    -o-transform: translateX(10px);
+    -webkit-transform: translateX(-4px);
+    -moz-transform: translateX(-4px);
+    -ms-transform: translateX(-4px);
+    -o-transform: translateX(-4px);
     transform: translateX(-4px);
 }
 
@@ -1451,6 +1583,9 @@ MEDIA QUERIES
 
     .header-main > .logo > img {
         width: 130px;
+        image-rendering: inherit;
+        image-rendering: initial;
+        image-rendering: unset;
     }
 
 
@@ -1534,10 +1669,6 @@ MEDIA QUERIES
     }
 
     .modal-services .modal-title > span {
-        font-size: 16px;
-    }
-
-    .modal-services .modal-body p {
         font-size: 16px;
     }
 
@@ -1629,10 +1760,6 @@ MEDIA QUERIES
         font-size: 22px;
     }
 
-    .modal-job .modal-body p {
-        font-size: 16px;
-    }
-
 
     /*--------------------------------------------------------------
     CONTACT
@@ -1679,6 +1806,21 @@ MEDIA QUERIES
 @media only screen and (max-width: 420px) {
 
     /*--------------------------------------------------------------
+    DEFAULT
+    --------------------------------------------------------------*/
+
+    .page-banner-full h1,
+    .page-banner h1 {
+        font-size: 45px;
+    }
+
+    .page-banner-full p,
+    .page-banner p {
+        font-size: 16px;
+    }
+
+
+    /*--------------------------------------------------------------
     HOME
     --------------------------------------------------------------*/
 
@@ -1692,19 +1834,6 @@ MEDIA QUERIES
 
     .home-about-title {
         font-size: 30px;
-    }
-
-
-    /*--------------------------------------------------------------
-    BLOG - SINGLE
-    --------------------------------------------------------------*/
-
-    .page-banner.page-banner-blog-single h1 {
-        font-size: 45px;
-    }
-
-    .page-banner.page-banner-blog-single p {
-        font-size: 16px;
     }
 
 
