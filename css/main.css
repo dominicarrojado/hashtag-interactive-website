@@ -1137,27 +1137,34 @@ BLOG - SINGLE
     line-height: 1;
 }
 
+.blog-single-content img[align=left],
 .blog-single-content img.float-left,
 .blog-single-content img.alignleft,
-.blog-single-content img[align=left],
-.blog-single-content iframe.float-left {
+.blog-single-content iframe[align=left],
+.blog-single-content iframe.float-left,
+.blog-single-content iframe.alignleft {
     margin-right: 25px;
     margin-bottom: 20px;
 }
 
+
+.blog-single-content img[align=right],
 .blog-single-content img.float-right,
 .blog-single-content img.alignright,
-.blog-single-content img[align=right],
-.blog-single-content iframe.float-right {
+.blog-single-content iframe[align=right],
+.blog-single-content iframe.float-right,
+.blog-single-content iframe.alignright {
     margin-left: 25px;
     margin-bottom: 20px;
 }
 
-.blog-single-content img.alignleft {
+.blog-single-content img.alignleft,
+.blog-single-content iframe.alignleft {
     float: left;
 }
 
-.blog-single-content img.alignright {
+.blog-single-content img.alignright,
+.blog-single-content iframe.alignright {
     float: right;
 }
 
@@ -1677,8 +1684,18 @@ MEDIA QUERIES
     BLOG - SINGLE
     --------------------------------------------------------------*/
 
+    .blog-single-content img[align=left],
+    .blog-single-content img.float-left,
+    .blog-single-content img.alignleft,
+    .blog-single-content iframe[align=left],
+    .blog-single-content iframe.float-left,
+    .blog-single-content iframe.alignleft,
+    .blog-single-content img[align=right],
     .blog-single-content img.float-right,
-    .blog-single-content img.float-left {
+    .blog-single-content img.alignright,
+    .blog-single-content iframe[align=right],
+    .blog-single-content iframe.float-right,
+    .blog-single-content iframe.alignright  {
         float: none;
         width: 100%;
         margin: 20px 0;
