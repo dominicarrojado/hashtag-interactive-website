@@ -1807,12 +1807,8 @@ MEDIA QUERIES
     INTERNSHIP
     --------------------------------------------------------------*/
 
-    .page-banner-internship.page-banner h1 {
-        font-size: 42px;
-    }
-
-    .page-banner-internship.page-banner p {
-        font-size: 15px;
+    .page-banner-internship.page-banner h1 > span {
+        display: block;
     }
 
 
@@ -1856,19 +1852,6 @@ MEDIA QUERIES
     .careers-internship h1 > span {
         font-size: 120%;
     }
-
-
-    /*--------------------------------------------------------------
-    INTERNSHIP
-    --------------------------------------------------------------*/
-
-    .page-banner-internship.page-banner h1 {
-        font-size: 30px;
-    }
-
-    .page-banner-internship.page-banner p {
-        font-size: 15px;
-    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -1909,16 +1892,12 @@ MEDIA QUERIES
     INTERNSHIP
     --------------------------------------------------------------*/
 
-    /*--------------------------------------------------------------
-    INTERNSHIP
-    --------------------------------------------------------------*/
-
     .page-banner-internship.page-banner h1 {
-        font-size: 23px;
+        font-size: 50px;
     }
 
     .page-banner-internship.page-banner p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
 
