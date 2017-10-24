@@ -1385,6 +1385,18 @@ CAREERS
     cursor: pointer;
 }
 
+/*--------------------------------------------------------------
+ANIMATIONS
+--------------------------------------------------------------*/
+
+.page-banner-internship.page-banner h1 {
+    font-size: 80px;
+}
+
+.page-banner-internship.page-banner p {
+    font-size: 25px;
+}
+
 
 /*--------------------------------------------------------------
 ANIMATIONS
@@ -1575,6 +1587,19 @@ MEDIA QUERIES
 
     .careers-creative-mind h2 {
         font-size: 25px;
+    }
+
+
+    /*--------------------------------------------------------------
+    INTERNSHIP
+    --------------------------------------------------------------*/
+
+    .page-banner-internship.page-banner h1 {
+        font-size: 58px;
+    }
+
+    .page-banner-internship.page-banner p {
+        font-size: 18px;
     }
 }
 
@@ -1779,6 +1804,19 @@ MEDIA QUERIES
 
 
     /*--------------------------------------------------------------
+    INTERNSHIP
+    --------------------------------------------------------------*/
+
+    .page-banner-internship.page-banner h1 {
+        font-size: 42px;
+    }
+
+    .page-banner-internship.page-banner p {
+        font-size: 15px;
+    }
+
+
+    /*--------------------------------------------------------------
     CONTACT
     --------------------------------------------------------------*/
 
@@ -1818,6 +1856,19 @@ MEDIA QUERIES
     .careers-internship h1 > span {
         font-size: 120%;
     }
+
+
+    /*--------------------------------------------------------------
+    INTERNSHIP
+    --------------------------------------------------------------*/
+
+    .page-banner-internship.page-banner h1 {
+        font-size: 30px;
+    }
+
+    .page-banner-internship.page-banner p {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -1855,8 +1906,21 @@ MEDIA QUERIES
 
 
     /*--------------------------------------------------------------
-    CAREERS
+    INTERNSHIP
     --------------------------------------------------------------*/
+
+    /*--------------------------------------------------------------
+    INTERNSHIP
+    --------------------------------------------------------------*/
+
+    .page-banner-internship.page-banner h1 {
+        font-size: 23px;
+    }
+
+    .page-banner-internship.page-banner p {
+        font-size: 14px;
+    }
+
 
     .internship-requirements .panel-title {
         font-size: 30px;
