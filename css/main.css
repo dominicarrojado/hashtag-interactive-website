@@ -668,6 +668,11 @@ DEFAULT
 HOME
 --------------------------------------------------------------*/
 
+.page-banner-home.page-banner-full h1 {
+    font-size: 115px;
+}
+
+
 .home-about-title {
     font-size: 35px;
     line-height: 1;
@@ -1658,6 +1663,11 @@ MEDIA QUERIES
     HOME
     --------------------------------------------------------------*/
 
+    .page-banner-home.page-banner-full h1 {
+        font-size: 100px;
+    }
+
+
     .contact-form-hashtag .form-control {
         font-size: 18px;
     }
@@ -1843,6 +1853,10 @@ MEDIA QUERIES
         font-size: 35px;
     }
 
+
+    .page-banner-home.page-banner-full h1 {
+        font-size: 70px;
+    }
 
     /*--------------------------------------------------------------
     CAREERS
