@@ -3,11 +3,7 @@ FUNCTIONS
 --------------------------------------------------------------*/
 
 function scrollToElement(element) {
-    $('html, body').animate({
-        scrollTop: $(element).offset().top - 54
-    }, 800, function() {
-        window.location.hash = element;
-    });
+    $('html, body').animate({ scrollTop: $(element).offset().top - 54 }, 800);
 }
 
 

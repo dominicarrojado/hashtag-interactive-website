@@ -1152,7 +1152,6 @@ BLOG - SINGLE
     margin-bottom: 20px;
 }
 
-
 .blog-single-content img[align=right],
 .blog-single-content img.float-right,
 .blog-single-content img.alignright,
@@ -1171,6 +1170,13 @@ BLOG - SINGLE
 .blog-single-content img.alignright,
 .blog-single-content iframe.alignright {
     float: right;
+}
+
+.blog-single-content img.aligncenter,
+.blog-single-content iframe.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
